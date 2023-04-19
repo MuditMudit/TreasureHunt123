@@ -1,0 +1,159 @@
+#clue3-link {
+    display: none;
+}
+
+
+
+body {
+    /* background-color: #cdbebe; */
+    color: #ffffff;
+    background-color: rgb(173, 29, 29);
+    background-image: url('/public/assets/img/grunge-texture.png');
+
+    /* dark color scheme */
+    background-blend-mode: luminosity;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    background-image: url('https://images.hdqwalls.com/wallpapers/fight-club-4k-2a.jpg');
+}
+
+.options-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1 {
+    font-size: 4rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+#h2i {
+    font-size: 4rem;
+    margin: 2rem 0;
+    text-align: center;
+
+
+}
+
+h2,
+h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.btn-submit {
+    display: block;
+    margin: auto;
+    background-color: #8b0000;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background-color: #4b0000;
+}
+
+.btn-submit:active {
+    position: relative;
+    top: 2px;
+}
+
+#clear-btn {
+    /* display: inline-block; */
+    background-color: transparent;
+    color: #b22d2d;
+    border: 2px solid #ffffff;
+    padding: 0.8rem 1.6rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+#clear-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#clear-btnclear:active {
+    position: relative;
+    top: 2px;
+}
+
+.form-check {
+    text-align: unset;
+    color: rgb(129, 96, 96);
+    margin-bottom: 16rem;
+    /*     font-size: 2.9rem; */
+    width: auto;
+    height: .6rem;
+    margin-right: 1rem;
+}
+
+#error-msg {
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Style the label to resemble a checkbox */
+label {
+    display: inline-block;
+    padding-left: 25px;
+    position: relative;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background-color: #d7caca;
+    border: 2px solid #444;
+    box-shadow: inset 0 0 0 2px #fff;
+}
+
+/* Style the label when the checkbox is checked */
+input[type="radio"]:checked+label:before {
+    content: "\2713";
+    color: #c21010;
+    text-align: center;
+    font-size: 18px;
+    line-height: 16px;
+    background-color: #fff;
+    border: 2px solid #b22d2d;
+    box-shadow: inset 0 0 0 2px #444;
+}

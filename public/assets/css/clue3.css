@@ -1,0 +1,144 @@
+/* .drag-drop-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.drag-drop-item { */
+/* border: 1px solid black; */
+/* border-radius: 5px;
+    padding: 5px; */
+/* }
+
+.drop-zone {
+    border: 2px dashed black;
+    height: 150px;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 150px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 10;
+    max-width: 60%;
+    max-height: 30%;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    font-size: 1cm;
+}
+
+
+
+.drop-zone-1 {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.drop-zone-2 {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.drop-zone-3 {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Style for drag-drop-container */
+/* Styles for drag and drop container */
+
+
+/* Style for drag and drop item */
+.drag-drop-item {
+    cursor: move;
+}
+
+
+/* Styles for submit button */
+#submit-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+
+}
+
+#submit-button:hover {
+    background-color: #3e8e41;
+}
+
+/* Styles for label elements */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+/* Styles for input elements */
+input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+/* Styles for strong elements */
+strong {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.drag-drop-container {
+    width: 800px;
+    height: 700px;
+    margin-top: 30px;
+    margin-left: 21rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+}

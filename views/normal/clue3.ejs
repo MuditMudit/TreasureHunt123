@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue 3</title>
+    <link rel="stylesheet" href="/assets/css/clue3.css">
+
+
+    <title>Clue 3, 4, 5</title>
+</head>
+
+<body>
+    <h1>Welcome to Clue 3, 4, 5</h1>
+    <p>Find the hidden objects in the picture and put them inside the text boxes.</p>
+
+    <div><strong>What do you get when you combine,
+        </strong>
+        <div class="drop-zone-1">
+            <label for="soap"></label> <!-- Soap: -->
+            <input type="text" id="Soap" name="soap"><br><br>
+        </div>&amp;<div class="drop-zone-2">
+            <label for="fname"></label>
+            <input type="text" id="Insomnia" name="Insomnia"><br><br>
+        </div><strong>The answer could be</strong>
+        <div class="drop-zone-3">
+            <label for="proMayhem"></label><!-- Project Mayhem: -->
+            <input type="text" id="proMayhem" name="Project Mayhem"><br><br>
+        </div>
+        <button id="submit-button" type="submit">Submit</button>
+    </div>
+    <div class="drag-drop-container" style="display: flex;justify-content: center;">
+        <div style="position: relative;"><img class="drag-drop-item" draggable="true"
+                src="/assets/img/soap-modified.png" alt="Soap" width="30" height="30" style="
+    position: absolute;
+    top: 307px;
+    left: 358px;
+    transform: rotateZ(13deg);
+    opacity: 0.7;
+">
+            <img class="drag-drop-item" draggable="true" src="/assets/img/insomnia.jpg" alt="Insomnia" width="70"
+                height="90" style="
+    position: absolute;
+    top: 510px;
+    transform: matrix3d(1, 0, 0, 0, -1.5, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    height: 40.8px;
+    width: 100px;
+    left: 382px;
+">
+            <img class="drag-drop-item" draggable="true" src="/assets/img/mayhem.jpeg" alt="Project Mayhem"
+                width="128" height="128" style="
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    transform: rotateYZ(32deg);
+    transform: matrix(1, 0.2, 0, 1, 0.7, 0);
+    mix-blend-mode: plus-lighter;
+    opacity: 0.6;
+">
+        </div>
+        <img src="/assets/img/basement.jpg" alt="Flowers in Chania" width="800" height="700">
+    </div>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script>
+    async function setStep(data) {
+        $.ajax({
+            type: 'POST',
+            url: "/setStep/",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: 'json'
+        }).then((response) => {
+            window.location.href = '/treasureHunt'
+        })
+    }</script>
+    <script src="/assets/js/clue3.js"></script>
+</body>
+
+</html>

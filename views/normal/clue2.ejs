@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Treasure Hunt</title>
+    <link rel="stylesheet" href="/assets/css/clue2.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</head>
+
+<body>
+    <li><a href="/clue3/" id="clue3-link" class="hidden">Clue3</a></li>
+    <h1>Clue 2</h1>
+    <div class="question-container">
+        <h2 id="h2i">What is the first rule of Fight Club?</h2>
+        <div class="options-container hidden">
+            <form class="form-check">
+                <input type="radio" id="option1" name="options" value="1">
+                <label for="option1">Never talk about Fight Club</label><br>
+                <input type="radio" id="option2" name="options" value="2">
+                <label for="option2">You do not talk about Fight Club</label><br>
+                <input type="radio" id="option3" name="options" value="3">
+                <label for="option3">If someone yells “stop!”, goes limp, or taps out, the fight is over</label><br>
+                <input type="radio" id="option4" name="options" value="4">
+                <label for="option4">Only two guys to a fight</label><br>
+            </form>
+        </div>
+        <button id="clear-btn">Clear</button>
+        <p id="error-msg"></p>
+        <!-- <button id="submit-btn" class="hidden">Submit</button> -->
+        <button class="btn-submit" id="submit-btn" onclick="checkAnswer()">Submit</button>
+        <!-- <button class="button-89" role="button">Button 89</button> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script>
+    async function setStep(data) {
+        $.ajax({
+            type: 'POST',
+            url: "/setStep/",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: 'json'
+        }).then((response) => {
+            window.location.href = '/treasureHunt'
+        })
+    }</script>
+    <script src="/assets/js/clue2.js"></script>
+</body>
+
+</html>

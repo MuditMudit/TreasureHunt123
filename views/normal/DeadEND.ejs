@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dead End</title>
+    <link rel="stylesheet" href="/public/assets/css/deadend.css">
+
+</head>
+
+<body>
+    <div class="background">
+        <div class="content">
+            <h1>DEAD END</h1>
+            <button onclick=" setStep({step:1})">Restart</button>
+        </div>
+    </div>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script>
+    async function setStep(data) {
+        $.ajax({
+                type: 'POST',
+                url: "/attempts",
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        $.ajax({
+            type: 'POST',
+            url: "/setStep/",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: 'json'
+        }).then((response) => {
+            window.location.href = '/treasureHunt'
+        })
+    }</script>
+</body>
+
+
+</html>
