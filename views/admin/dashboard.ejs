@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard || FC</title>
+    <link href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>LeaderBoards</h1>
+    <section id="companyDetails" class="container">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Level Reached</th>
+                    <th>Deadends</th>
+                    <th>Attempts</th>
+                </tr>
+            </thead>
+        </table>
+    </section>
+
+
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $.ajax({
+            type: 'GET',
+            url: "/getUserDetails/",
+            contentType: "application/json",
+            dataType: 'json'
+        }).then((response) => {
+            data = [...response.data];
+            console.log(data);
+            $('#example').DataTable({
+                data: data,
+                processing: true,
+                scrollY: 440,
+                scrollX: true,
+                scrollCollapse: true,
+                columns: [
+                    { data: "name" },
+                    { data: 'email' },
+                    { data: 'data.currentStep'},
+                    { data: 'deadends'},
+                    { data: 'attempts'},
+
+                ],
+            });
+        })
+    </script>
+
+</body>
+
+</html>

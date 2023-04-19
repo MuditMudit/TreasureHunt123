@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <link rel="stylesheet" href="/assets/css/test.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <h2>Clue1<h2>
+            </li>
+
+            <!-- <li><a href="#">Clue 3</a></li> -->
+            <li><button onclick="setStep({step : 2})" id="clue-2-link">Clue 2</button></li>
+            <button id="button1" onclick="myFunction()">💡</button><!-- -->
+        </ul>
+
+    </nav>
+    <h1>Welcome to the Treasure Hunt!</h1>
+    <p>Man why so bright can't start the fight club in day time</p>
+
+    <!-- Hidden smiley face image in the footer -->
+    <footer>
+        <div id="footer-content">
+            <p>Explore the website to find your next clue!</p>
+            <p id="clue-2">Look for the smiley face hidden somewhere on this website to uncover
+                your next clue..</p>
+        </div>
+        <div id="hidden-image-container">
+            <img src="/assets/img/smile.jpg" alt="hidden-smiley-face" class="hidden-image">
+        </div>
+    </footer>
+
+    <!-- Button to reveal the hidden image -->
+    <button id="reveal-image-btn" onclick="revealImage()">&#128513;</button>
+    <p id="clue-2" class="hidden color-matching">Look for the smiley face hidden somewhere on this website to
+        uncover
+        your next clue..</p>
+    <!-- Clue 2: Text with CSS color and font-family matching the background -->
+
+
+    <!-- Clue 3: Image with transparency matching the background -->
+    <!-- <div id="transparent-image-container">
+        <img src="transparent.png" alt="transp2arent-image" class="transparent-image">
+    </div> -->
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/test.js"></script>
+    <script>
+        async function setStep(data) {
+            $.ajax({
+                type: 'POST',
+                url: "/setStep/",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: 'json'
+            }).then((response) => {
+                window.location.href = '/treasureHunt'
+            })
+        }
+    </script>
+
+</body>
+
+</html>
