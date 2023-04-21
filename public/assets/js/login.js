@@ -14,7 +14,7 @@ function getCookie(cname) {
     }
     return "";
 }
-if (getCookie('userToken')) {
+if (getCookie('__session')) {
     window.location.href = '/treasureHunt'
 }
 function validateLog() {
@@ -43,17 +43,18 @@ function setCookieLog(cname, cvalue) {
     d.setTime(d.getTime() + (5 * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    return null;
 }
-async function postDataLog(url, data) {
+function postDataLog(url, data) {
     $.ajax({
         type: 'POST',
         url,
         data: JSON.stringify(data),
         contentType: "application/json",
         dataType: 'json'
-    }).then(async (response) => {
-        const userToken = response.data;
-        await setCookieLog('userToken', userToken);
+    }).then((response) => {
+        const __session = response.data;
+        setCookieLog('__session', __session);
         window.location.href = '/treasureHunt';
     })
 }

@@ -14,8 +14,8 @@ function getCookie(cname) {
     return "";
 }
 const signUp = document.getElementById('signup-form')
-if (getCookie('userToken').trim()) {
-    window.location.href = '/login'
+if (getCookie('__session').trim()) {
+    window.location.href = '/treasureHunt'
 }
 function validate() {
     const email = document.getElementById("email").value
@@ -61,11 +61,11 @@ async function postData(url, data) {
         contentType: "application/json",
         dataType: 'json'
     }).then((response) => {
-        if (response.status = "success") {
-            setCookie('userToken', response.data)
-            window.location.href = '/treasure'
+        if (response.status == "success") {
+            setCookie('__session', response.data)
+            window.location.href = '/treasureHunt'
         } else {
-            window.alert("Error : " + response.message);
+            window.alert("Error : " + response.error);
         }
 
     })
